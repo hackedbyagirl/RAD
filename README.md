@@ -11,7 +11,11 @@ The Remote Attack Device (RAD) Platform is an advanced penetration testing and r
 
 ## Getting Started
 1. Generate Offensive AWS AMI Base Images
-2. Setup and Deploy AWS EC2 instances 
+2. Setup and Deploy AWS EC2 instances
+3. Configure the RAD Device
+4. Manage your instances 
+
+
 ### 1. Generate Offensive AWS AMI Base Images
 Utilizing [Eris](https://github.com/hackedbyagirl/Eris), a specialized tool designed for creating Offensive Amazon Machine Images (AMIs), create two base images: one for Kali Linux and another for Windows. These AMIs will come pre-equipped with the necessary penetration testing and red teaming tools for both systems. Once the AMIs are ready, they can be seamlessly deployed as AWS EC2 instances. 
 
@@ -24,10 +28,10 @@ If you would like to add additional features, you can manually adjust the EC2 In
 ### 2. Setup and Deploy AWS EC2 instances 
 Utilizing [Eris-deploy](https://github.com/hackedbyagirl/Eris-deploy), a specialized tool designed for deploying the Amazon Machine Images (AMIs) created above, to EC2 Instances. This tool will allow you to setup permissions such as SSH and RDP connections, respectively, in your AWS security groups and EC2 Instances and ensure a secure connection to your Mini PC device.
 
-### 4. Configure the RAD Device 
+### 3. Configure the RAD Device 
 You'll want to configure the Mini PC as a VPN client, to establish VPN connections with each VPN server on the EC2 instances once conntected to a network. This will create a secure tunnel between the NUC and the EC2 instances, allowing for remote testing. You may also want to configure the mini pc to automatically establish this VPN connection whenever it's plugged into a network.
 
-### 5. Manage your instances 
+### 4. Manage your instances 
 With the VPN connection active, you can remotely manage your EC2 instances via SSH (for Kali) and RDP (for Windows).
 
 ## Disclaimer
