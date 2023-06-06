@@ -10,16 +10,19 @@ The Remote Attack Device (RAD) Platform is an advanced penetration testing and r
 - VPN solution for secure connection between the Mini PC and EC2 instances
 
 ## Getting Started
-### 1. Setup AWS EC2 instances 
-Create and configure two EC2 instances (Kali Linux and Windows) utilizing [Eris](https://github.com/hackedbyagirl/Eris) or the AWS Management Console.
+1. Generate Offensive AWS AMI Base Images
+2. Setup and Deploy AWS EC2 instances 
+### 1. Generate Offensive AWS AMI Base Images
+Utilizing [Eris](https://github.com/hackedbyagirl/Eris), a specialized tool designed for creating Offensive Amazon Machine Images (AMIs), create two base images: one for Kali Linux and another for Windows. These AMIs will come pre-equipped with the necessary penetration testing and red teaming tools for both systems. Once the AMIs are ready, they can be seamlessly deployed as AWS EC2 instances. 
 
-*Note:* Make sure to allow SSH and RDP connections, respectively, in your AWS security groups and EC2 Instances.
+If you would like to add additional features, you can manually adjust the EC2 Instance after it has been deployed or edit the configuration of each box using `Eris`. These additional features may include:
+- Additional offensive tools
+- VPN connections on both instances to allow secure connections from the RAD platform (You can use AWS VPN Gateway or the built-in VPN capabilities of Kali and Windows.)
 
-### 2. Install necessary tools
-Install required penetration testing tools on both Kali Linux and Windows instances. It is important to note that if you go the AWS Management Console route, this will have to be done manually, however, this step is addressed by the [Eris](https://github.com/hackedbyagirl/Eris) tool. 
+> *Note*: The builder does *not* manage AMIs. Once it creates an AMI and stores it in your account, it is up to you to use, delete, etc. the AMI. (Ex: Terraform)
 
-### 3. Configure VPN 
-Set up VPN connections on both instances to allow secure connections from the RAD platform. You can use AWS VPN Gateway or the built-in VPN capabilities of Kali and Windows.
+### 2. Setup and Deploy AWS EC2 instances 
+Utilizing [Eris-deploy](https://github.com/hackedbyagirl/Eris-deploy), a specialized tool designed for deploying the Amazon Machine Images (AMIs) created above, to EC2 Instances. This tool will allow you to setup permissions such as SSH and RDP connections, respectively, in your AWS security groups and EC2 Instances and ensure a secure connection to your Mini PC device.
 
 ### 4. Set up the RAD Platform 
 Configure the Mini PC to establish VPN connections with the EC2 instances whenever it's connected to a network.
