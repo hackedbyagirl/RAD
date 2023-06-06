@@ -9,3 +9,6 @@ Use the following procedure to set up an AWS Site-to-Site VPN connection from th
 5. Create VPN Connection
 6. Download Config file
 7. Configure RAD Gateway
+
+## Resources
+[AWS Site-to-Site VPN](https://docs.aws.amazon.com/vpn/latest/s2svpn/SetUpVPNConnections.html)
